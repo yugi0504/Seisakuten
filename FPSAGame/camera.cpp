@@ -1,5 +1,5 @@
 #include"camera.h"
-#include"DxLib.h"
+#include<cmath>
 
 void Camera::CameraInitialize()
 {
@@ -30,6 +30,13 @@ void Camera::CameraMovement()
     //上下回転の制限
     if (cameraPitch >  DX_PI / 2)cameraPitch =  DX_PI / 2;
     if (cameraPitch < -DX_PI / 2)cameraPitch = -DX_PI / 2;
+
+    //注視点の計算
+    targetPosX = charaPosX + cos(cameraPitch) * cos(cameraYaw);
+    targetPosY = charaPosY + sin(cameraYaw);
+    targetPosZ = charaPosZ + sin(cameraPitch) * cos(cameraYaw);
+
+    TargetPos = VGet(targetPosX, targetPosY, targetPosZ);
 }
 
 void Camera::CharaMovement()
@@ -54,14 +61,29 @@ void Camera::CharaMovement()
     {
         charaPosX += 10.0f;
     }
+    //ジャンプ
     if (CheckHitKey(KEY_INPUT_SPACE) && onGround)
     {
         charaPosY += 10.0f;
         onGround = false;
+    }
+    //地面についている
+    if (charaPosY < 0.0f)
+    {
+        charaPosY = 0.0f;
+        onGround = true;
     }
 }
 
 void Camera::CameraUpdate()
 {
     CameraPos = VGet(charaPosX, charaPosY, charaPosZ);
+
+    SetCameraPositionAndTargetAndUpVec
+    (
+        CameraPos,
+        TargetPos,
+        VGet(cos(cameraPitch) * sin(cameraYaw), sin(cameraPitch), cos(cameraPitch) * sin(cameraYaw))
+    );
+    
 }

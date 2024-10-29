@@ -1,4 +1,5 @@
 #pragma once
+#include"DxLib.h"
 
 class Camera
 {
@@ -27,25 +28,31 @@ private:
     ///　変数
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    VECTOR CameraPos;   //カメラ位置
+    VECTOR CameraPos;       //カメラ位置
+    VECTOR TargetPos;       //注視点
 
-    float charaPosX;    //キャラX座標
-    float charaPosY;    //キャラY座標
-    float charaPosZ;    //キャラZ座標
+    float charaPosX;        //キャラX座標
+    float charaPosY;        //キャラY座標
+    float charaPosZ;        //キャラZ座標
 
-    float cameraYaw;    //横回転
-    float cameraPitch;  //縦回転
+    float targetPosX;       //注視点X座標
+    float targetPosY;       //注視点Y座標
+    float targetPosZ;       //注視点Z座標
 
-    int   mousePosX;      //マウス座標X
-    int   mousePosY;      //マウス座標Y
+    float cameraYaw;        //横回転
+    float cameraPitch;      //縦回転
 
-    bool  onGround;      //地面にいるかどうか
+    int   mousePosX;        //マウス座標X
+    int   mousePosY;        //マウス座標Y
+
+    bool  onGround;         //地面にいるかどうか
 
 public:
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ///　メソッド
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
     /// <summary>
     /// カメラの初期化

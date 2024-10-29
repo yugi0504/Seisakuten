@@ -1,0 +1,14 @@
+﻿  camera.cpp
+C:\Users\student\Desktop\Seisakuten-main\Seisakuten-main\FPSAGame\camera.h(25,40): warning C4305: '初期化中': 'double' から 'const float' へ切り詰めます。
+  (ソース ファイル 'camera.cpp' をコンパイルしています)
+  
+C:\Users\student\Desktop\Seisakuten-main\Seisakuten-main\FPSAGame\camera.cpp(32,55): warning C4305: '=': 'double' から 'float' へ切り詰めます。
+C:\Users\student\Desktop\Seisakuten-main\Seisakuten-main\FPSAGame\camera.cpp(33,55): warning C4305: '=': 'double' から 'float' へ切り詰めます。
+  main.cpp
+C:\Users\student\Desktop\Seisakuten-main\Seisakuten-main\FPSAGame\camera.h(25,40): warning C4305: '初期化中': 'double' から 'const float' へ切り詰めます。
+  (ソース ファイル 'main.cpp' をコンパイルしています)
+  
+  Model.cpp
+  コードを生成中...
+C:\Users\student\Desktop\Seisakuten-main\Seisakuten-main\FPSAGame\main.cpp(36,1): warning C4715: 'WinMain': 値を返さないコントロール パスがあります。
+LINK : fatal error LNK1104: ファイル 'DxDrawFunc_vs2015_x86_MTd.lib' を開くことができません。
